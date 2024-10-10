@@ -3,22 +3,25 @@ function showMenu(e){
     var menu = document.querySelector(".nftmax-smenu");
     console.log(menu);
     menu.style.transform = "translateX(0)";
+    document.querySelector('.close-icon').style.display = "block";
 }
 function hideMenu(){
     var menu = document.querySelector(".nftmax-smenu");
     menu.style.transform = "translateX(-100%)";
     var icon_menu = document.querySelector(".icon-menu");
     icon_menu.style.display ="block";
+    document.querySelector('.close-icon').style.display = "none";
 }
 function fullscreen(){
-  var main_game = document.querySelector('#game-main');
+  /*var main_game = document.querySelector('#game-main');
   if(main_game.classList.contains("fullscreen")){
     main_game.classList.remove("fullscreen");
     document.querySelector('.btn-full svg use').setAttribute("href","#enterFullscreenIcon");
   } else {
     main_game.classList.add("fullscreen");
     document.querySelector('.btn-full svg use').setAttribute("href","#closeFullscreenIcon");
-  }
+  }*/
+  open_fullscreen();
 }
 function open_fullscreen() {
     let game = document.getElementById("gameframe");
@@ -201,7 +204,7 @@ function loadData(){
         }
         if(window.location.href.indexOf("localhost") == -1 && window.location.href.indexOf("127.0.0.1") == -1 && window.location.href.indexOf("tunnel-rush.html") == -1 && window.location.href.indexOf("monkey-mart.html") == -1){
           loadGA();
-          loadAds();
+          // loadAds();
         }
     });
 }
